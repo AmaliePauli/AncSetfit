@@ -88,7 +88,7 @@ class SetFitBaseModel:
 
 def sentence_generates_achor(sentences, labels, template_dict, LABELS, input_pair):
 #train_examples = [InputExample(texts=['Anchor 1', 'Positive 1', 'Negative 1']),
-#InputExample(texts=['Anchor 2', 'Positive 2', 'Negative 2'])]
+
     
     for first_idx in range(len(sentences)):
         current_sentence = sentences[first_idx]
@@ -97,31 +97,12 @@ def sentence_generates_achor(sentences, labels, template_dict, LABELS, input_pai
         anchor = template_dict[current_label]
         second_sentence=np.random.choice(np.array(sentences)[np.array(labels)!=current_label])
 
-        # input pair
-        #train_examples = [InputExample(texts=['Anchor 1', 'Positive 1', 'Negative 1']),
-        #InputExample(texts=['Anchor 2', 'Positive 2', 'Negative 2'])]
+ 
         input_pair.append(InputExample(texts=[anchor, current_sentence, second_sentence]))
                 
     return input_pair
 
 
-def sentence_generates_achor_combine(sentences, labels, template_dict, LABELS, input_pair):
-#[InputExample(texts=['Anchor 1', 'Positive 1', 'Positive 2', Negative 1'])
-    
-    for first_idx in range(len(sentences)):
-        current_sentence = sentences[first_idx]
-        current_label = labels[first_idx]
-        # get the achor template
-        anchor = template_dict[current_label]
-        positive_sentence=np.random.choice(np.array(sentences)[np.array(labels)==current_label])
-        negative_sentence=np.random.choice(np.array(sentences)[np.array(labels)!=current_label])
-
-        # input pair
-        #train_examples = [InputExample(texts=['Anchor 1', 'Positive 1', 'Negative 1']),
-        #InputExample(texts=['Anchor 2', 'Positive 2', 'Negative 2'])]
-        input_pair.append(InputExample(texts=[anchor, current_sentence, positive_sentence, negative_sentence]))
-                
-    return input_pair
 
 def generate_anchors(template: str, labels: list) -> dict:
     dicts = {}
