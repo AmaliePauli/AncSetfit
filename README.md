@@ -35,3 +35,7 @@ python run_fewshot_ancsetfit.py \
 
 ### Getting started example /demo
 The jupyter notebook tiny_example.ipyn is a quick demo to try it - the notebook shows in a small hand-crafted example how AncSetFit can learn to generalize differently based on the same training data depending on the provided anchor statements of textual description of the classes.
+
+### publication
+Anchoring Fine-tuning of Sentence Transformer with Semantic Label Information for Efficient Truly Few-shot Classification
+To appear at EMNLP 2023, short paper. 
