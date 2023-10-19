@@ -32,6 +32,17 @@ python run_fewshot_ancsetfit.py \
 --seeds_num 20 \
 --setting_name TEST 
 ```
+Or specify datast by ```--dataset sst5 emotion```
+
+**Template abilation**
+The argument --setting_name is deciding the way to construct the templates: use 'DEV' for labels, 'PEM* for permutation of the labels, and 'ALF' for no actual information in the form of letters.
+```python 
+python run_template_abilations.py \
+--sample_sizes 2  \
+--loss=TripletLoss \
+--seeds_num 1 \
+--setting_name PEM
+```
 
 ### Getting started example /demo
 The jupyter notebook tiny_example.ipyn is a quick demo to try it - the notebook shows in a small hand-crafted example how AncSetFit can learn to generalize differently based on the same training data depending on the provided anchor statements of textual description of the classes.
