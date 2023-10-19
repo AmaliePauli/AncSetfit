@@ -29,7 +29,6 @@ from setfit.modeling import SetFitBaseModel, SKLearnWrapper, sentence_pairs_gene
 #from setfit.utils import load_data_splits
 from templates import LABELS, TEMPLATES, DATASET_TO_METRIC, DEV_DATASET_TO_METRIC, DEV_LABELS, DEV_TEMPLATES 
 from data import create_fewshot_splits, load_data_splits
-from localLoss import QuadratLoss
 import time
 
 # Grab Currrent Time Before Running the Code
